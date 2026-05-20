@@ -1,0 +1,1633 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alina & Tobi | 04.09.2026</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Cinzel:wght@400;500;600&family=Lora:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:          #1C3457;
+      --navy-mid:      #2A4A72;
+      --cornflower:    #6592D6;
+      --cornflower-2:  #7AAAE3;
+      --smoky:         #8AAABF;
+      --steel:         #4A6FA5;
+      --mist:          #C5D9EE;
+      --pale-blue:     #E8F1FA;
+      --pale-2:        #F0F6FF;
+      --gold:          #B8965A;
+      --gold-light:    #CEAB7A;
+      --white:         #FFFFFF;
+      --off-white:     #FAFBFF;
+      --text:          #1a2c45;
+      --text-mid:      #4a6080;
+      --text-light:    #8aa0b8;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Lora', serif;
+      font-size: 17px;
+      background: var(--off-white);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* ════════════════════════════════
+       NAV
+    ════════════════════════════════ */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      background: rgba(28, 52, 87, 0.88);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(101,146,214,0.25);
+      padding: 0 40px;
+      height: 62px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav-mono {
+      font-family: 'Pinyon Script', cursive;
+      color: white;
+      font-size: 1.8rem;
+    }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a {
+      color: rgba(197,217,238,0.85);
+      text-decoration: none;
+      font-size: 0.72rem;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      font-weight: 500;
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--cornflower-2); }
+
+    /* ════════════════════════════════
+       HERO
+    ════════════════════════════════ */
+    #hero {
+      width: 100%;
+      height: 100vh;
+      min-height: 640px;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding-bottom: clamp(60px, 8vh, 120px);
+    }
+    .hero-photo {
+      position: absolute; inset: 0;
+      background-image: url('TobiAlina.jpeg');
+      background-size: cover;
+      background-position: center 28%;
+    }
+    .hero-grad {
+      position: absolute; inset: 0;
+      background: linear-gradient(
+        165deg,
+        rgba(28,52,87,0.72) 0%,
+        rgba(101,146,214,0.35) 45%,
+        rgba(28,52,87,0.80) 100%
+      );
+    }
+    .hero-vignette {
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at center, transparent 40%, rgba(14,30,55,0.55) 100%);
+    }
+    .hero-content {
+      position: relative;
+      text-align: center;
+      color: white;
+      padding: 40px;
+    }
+    .hero-motto {
+      margin-top: 24px;
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      font-size: clamp(1rem, 2.5vw, 1.4rem);
+      color: rgba(255,255,255,0.9);
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.5);
+    }
+    .hero-names {
+      font-family: 'Pinyon Script', cursive;
+      font-size: clamp(4rem, 10vw, 8.5rem);
+      line-height: 1.25;
+      padding: 0.05em 0.15em;
+      background: linear-gradient(135deg, #ffffff 0%, #c5d9ee 50%, #7aaae3 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      filter: drop-shadow(0 4px 20px rgba(0,0,0,0.3));
+      margin-bottom: 6px;
+    }
+    .hero-rule {
+      display: flex; align-items: center; justify-content: center; gap: 16px;
+      margin: 20px 0 22px;
+    }
+    .hero-rule-line {
+      flex: 1; max-width: 140px; height: 1px;
+      background: linear-gradient(to right, transparent, rgba(197,217,238,0.7));
+    }
+    .hero-rule-line.r { background: linear-gradient(to left, transparent, rgba(197,217,238,0.7)); }
+    .hero-rule-anchor {
+      font-size: 1.6rem;
+      filter: drop-shadow(0 2px 10px rgba(101,146,214,0.6));
+      line-height: 1;
+    }
+    .hero-info {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+    }
+    .hero-info-item {
+      padding: 0 28px;
+      text-align: center;
+    }
+    .hero-info-item:not(:last-child) {
+      border-right: 1px solid rgba(197,217,238,0.3);
+    }
+    .hero-info-label {
+      font-size: 0.72rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--mist);
+      margin-bottom: 5px;
+    }
+    .hero-info-value {
+      font-family: 'Cinzel', serif;
+      font-size: 1.35rem;
+      font-weight: 400;
+      color: white;
+      letter-spacing: 1px;
+    }
+    .hero-scroll {
+      position: absolute;
+      bottom: 30px; left: 50%;
+      transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: 6px;
+      color: rgba(197,217,238,0.6);
+      font-size: 0.65rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      animation: heroScroll 2.5s ease-in-out infinite;
+    }
+    @keyframes heroScroll {
+      0%,100% { transform: translateX(-50%) translateY(0); opacity: .6; }
+      50% { transform: translateX(-50%) translateY(10px); opacity: 1; }
+    }
+
+    /* ════════════════════════════════
+       WAVE SHAPES
+    ════════════════════════════════ */
+    .shape { display: block; width: 100%; line-height: 0; border: none; outline: none; overflow: hidden; }
+
+    /* ════════════════════════════════
+       SECTION COMMON
+    ════════════════════════════════ */
+    .section-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.72rem;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 16px;
+      font-family: 'Cinzel', serif;
+    }
+    .section-eyebrow::before,
+    .section-eyebrow::after {
+      content: '';
+      width: 36px; height: 1px;
+    }
+    .section-title {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      font-weight: 600;
+      line-height: 1.1;
+      margin-bottom: 18px;
+    }
+    .section-lead {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+    .section-head {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+    .inner { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+
+    /* ════════════════════════════════
+       ABLAUF  – cornflower blue bg
+    ════════════════════════════════ */
+    #ablauf {
+      background: linear-gradient(160deg, var(--navy) 0%, var(--navy-mid) 50%, #1e3e6a 100%);
+      padding: 96px 24px;
+    }
+    #ablauf .section-eyebrow { color: var(--cornflower-2); }
+    #ablauf .section-eyebrow::before,
+    #ablauf .section-eyebrow::after { background: var(--cornflower); opacity: .5; }
+    #ablauf .section-title { color: white; }
+    #ablauf .section-lead { color: var(--mist); }
+
+    /* ── Timeline (icon-left, no cards) ── */
+    .timeline {
+      position: relative;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .tl-item {
+      display: flex;
+      gap: 28px;
+      padding-bottom: 44px;
+      position: relative;
+      align-items: flex-start;
+    }
+    .tl-item:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      left: 21px;
+      top: 46px;
+      bottom: 0;
+      width: 1px;
+      background: linear-gradient(to bottom,
+        rgba(101,146,214,0.45) 0%,
+        rgba(101,146,214,0.08) 100%
+      );
+    }
+
+    .tl-icon {
+      flex-shrink: 0;
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: rgba(101,146,214,0.15);
+      border: 1.5px solid rgba(101,146,214,0.4);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem;
+      position: relative;
+      z-index: 1;
+      transition: background .25s, border-color .25s, transform .25s;
+    }
+    .tl-item:hover .tl-icon {
+      background: rgba(101,146,214,0.28);
+      border-color: rgba(122,170,227,0.7);
+      transform: scale(1.08);
+    }
+
+    .tl-body {
+      flex: 1;
+      padding-top: 6px;
+    }
+    .tl-time {
+      font-size: 0.72rem;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--cornflower-2);
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+    .tl-label {
+      font-family: 'Cinzel', serif;
+      font-size: 1.45rem;
+      font-weight: 400;
+      color: white;
+      margin-bottom: 6px;
+      line-height: 1.2;
+    }
+    .tl-desc {
+      font-size: 0.9rem;
+      color: rgba(197,217,238,0.7);
+      line-height: 1.65;
+    }
+
+    /* ════════════════════════════════
+       UPLOAD  – pale blue bg
+    ════════════════════════════════ */
+    #upload {
+      background: var(--pale-blue);
+      padding: 96px 24px;
+    }
+    #upload .section-eyebrow { color: var(--steel); }
+    #upload .section-eyebrow::before,
+    #upload .section-eyebrow::after { background: var(--steel); opacity: .4; }
+    #upload .section-title { color: var(--navy); }
+    #upload .section-lead { color: var(--text-mid); }
+
+    .upload-card {
+      background: white;
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 0 8px 48px rgba(74,111,165,0.12), 0 2px 8px rgba(74,111,165,0.06);
+    }
+    .upload-zone {
+      border: 2px dashed var(--cornflower);
+      border-radius: 14px;
+      padding: 60px 40px;
+      text-align: center;
+      cursor: pointer;
+      transition: all .25s;
+      position: relative;
+      background: var(--pale-2);
+    }
+    .upload-zone:hover, .upload-zone.drag-over {
+      border-color: var(--steel);
+      background: var(--pale-blue);
+    }
+    .upload-zone input[type="file"] {
+      position: absolute; inset: 0; opacity: 0; cursor: pointer; width: 100%; height: 100%;
+    }
+    .upload-zone-icon {
+      width: 72px; height: 72px;
+      background: linear-gradient(135deg, var(--cornflower) 0%, var(--steel) 100%);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 2rem;
+      box-shadow: 0 8px 24px rgba(101,146,214,0.35);
+    }
+    .upload-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.5rem;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .upload-sub { font-size: 0.85rem; color: var(--text-light); margin-bottom: 24px; }
+    .upload-cta {
+      display: inline-block;
+      padding: 12px 36px;
+      background: linear-gradient(135deg, var(--cornflower) 0%, var(--steel) 100%);
+      color: white;
+      border-radius: 40px;
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 600;
+      pointer-events: none;
+      box-shadow: 0 6px 20px rgba(101,146,214,0.35);
+    }
+    .upload-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 18px;
+      padding: 6px 18px;
+      background: rgba(101,146,214,0.1);
+      border: 1px solid rgba(101,146,214,0.3);
+      border-radius: 20px;
+      font-size: 0.8rem;
+      color: var(--steel);
+      font-weight: 600;
+    }
+
+    /* ════════════════════════════════
+       GALERIE  – smoky cornflower bg
+    ════════════════════════════════ */
+    #galerie {
+      background: linear-gradient(180deg, #2a4a72 0%, #1C3457 100%);
+      padding: 96px 24px;
+    }
+    #galerie .section-eyebrow { color: var(--cornflower-2); }
+    #galerie .section-eyebrow::before,
+    #galerie .section-eyebrow::after { background: var(--cornflower-2); opacity: .5; }
+    #galerie .section-title { color: white; }
+    #galerie .section-lead { color: var(--mist); }
+
+    .gallery-empty {
+      text-align: center;
+      padding: 64px 24px;
+      color: rgba(197,217,238,0.5);
+    }
+    .gallery-empty-icon {
+      font-size: 4rem; margin-bottom: 16px; display: block;
+      filter: grayscale(1) opacity(.4);
+    }
+    .gallery-empty p { font-size: 0.95rem; line-height: 1.7; }
+
+    .gallery-grid {
+      columns: 3;
+      column-gap: 14px;
+    }
+    @media (max-width: 720px) { .gallery-grid { columns: 2; } }
+    @media (max-width: 460px) { .gallery-grid { columns: 1; } }
+
+    .g-item {
+      break-inside: avoid;
+      margin-bottom: 14px;
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
+      cursor: zoom-in;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.35);
+      transition: transform .3s, box-shadow .3s;
+    }
+    .g-item:hover { transform: scale(1.025); box-shadow: 0 12px 40px rgba(0,0,0,0.5); }
+    .g-item img { width: 100%; display: block; }
+    .g-item-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(28,52,87,0.5) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity .25s;
+    }
+    .g-item:hover .g-item-overlay { opacity: 1; }
+    .g-item-del {
+      position: absolute;
+      top: 10px; right: 10px;
+      width: 30px; height: 30px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.9);
+      border: none; cursor: pointer;
+      font-size: 0.8rem;
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; transition: opacity .2s;
+      color: #b00;
+    }
+    .g-item:hover .g-item-del { opacity: 1; }
+
+    /* ════════════════════════════════
+       LIGHTBOX
+    ════════════════════════════════ */
+    #lightbox {
+      display: flex;
+      position: fixed; inset: 0; z-index: 1000;
+      background: rgba(14,28,50,0.96);
+      align-items: center; justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .28s ease;
+    }
+    #lightbox.active { opacity: 1; pointer-events: all; }
+    #lightbox img {
+      max-width: 92vw; max-height: 88vh;
+      border-radius: 10px;
+      box-shadow: 0 16px 80px rgba(0,0,0,0.7);
+      transform: scale(0.86);
+      transition: transform .38s cubic-bezier(0.34, 1.3, 0.64, 1);
+    }
+    #lightbox.active img { transform: scale(1); }
+    #lb-close {
+      position: absolute; top: 22px; right: 30px;
+      color: rgba(197,217,238,0.8); font-size: 2.4rem;
+      cursor: pointer; background: none; border: none;
+      line-height: 1; transition: color .2s, transform .2s;
+    }
+    #lb-close:hover { color: white; transform: rotate(90deg); }
+
+    /* ════════════════════════════════
+       FOOTER
+    ════════════════════════════════ */
+    footer {
+      background: var(--navy);
+      border-top: 1px solid rgba(101,146,214,0.2);
+      padding: 62px 24px;
+      text-align: center;
+    }
+    .footer-mono {
+      font-family: 'Pinyon Script', cursive;
+      font-size: 3.36rem;
+      background: linear-gradient(135deg, var(--cornflower-2), var(--mist));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 12px;
+    }
+    .footer-date {
+      font-size: 0.84rem;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: var(--text-light);
+      margin-bottom: 22px;
+    }
+    .footer-slogan {
+      font-family: 'Cinzel', serif;
+      font-style: italic;
+      font-size: 1.26rem;
+      color: var(--cornflower-2);
+    }
+
+    /* ════════════════════════════════
+       MOBILE BOTTOM NAV
+    ════════════════════════════════ */
+    .mob-nav {
+      display: none;
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      z-index: 300;
+      background: rgba(28,52,87,0.96);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-top: 1px solid rgba(101,146,214,0.25);
+      padding: 10px 0 env(safe-area-inset-bottom, 10px);
+      display: none;
+      justify-content: space-around;
+      align-items: center;
+    }
+    .mob-nav a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3px;
+      color: rgba(197,217,238,0.7);
+      text-decoration: none;
+      font-size: 0.6rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 600;
+      padding: 4px 16px;
+      transition: color .2s;
+    }
+    .mob-nav a:hover { color: var(--cornflower-2); }
+    .mob-nav a svg { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 1.8; }
+
+    /* ════════════════════════════════
+       TABLET ≤ 768px
+    ════════════════════════════════ */
+    @media (max-width: 768px) {
+      #ablauf, #upload, #galerie { padding: 72px 16px; }
+      .section-head { margin-bottom: 40px; }
+      .section-lead { font-size: 0.92rem; }
+      .inner { padding: 0 16px; }
+    }
+
+    /* ════════════════════════════════
+       MOBILE ≤ 640px
+    ════════════════════════════════ */
+    @media (max-width: 640px) {
+      /* Nav */
+      nav { padding: 0 20px; height: 54px; }
+      .nav-links { display: none; }
+      .nav-mono { font-size: 1.6rem; }
+
+      /* Mobile bottom nav visible */
+      .mob-nav { display: flex; }
+
+      /* Extra bottom padding so content isn't behind mob-nav */
+      footer { padding-bottom: calc(40px + env(safe-area-inset-bottom, 60px) + 60px); }
+
+      /* Hero */
+      #hero { padding-top: clamp(72px, 16vh, 120px); min-height: 100svh; }
+      .hero-content { padding: 16px 20px; }
+      .hero-badge {
+        font-size: 0.58rem;
+        letter-spacing: 2px;
+        padding: 6px 14px;
+        margin-bottom: 16px;
+      }
+      .hero-names { font-size: clamp(3.2rem, 14vw, 5rem); line-height: 1.2; }
+      .hero-rule { margin: 12px 0; }
+      .hero-rule-line { width: 44px; }
+      .hero-anchor-badge { width: 36px; height: 36px; font-size: 1rem; }
+      .hero-info { flex-direction: column; gap: 8px; }
+      .hero-info-item { border: none !important; padding: 4px 0; }
+      .hero-info-label { font-size: 0.58rem; }
+      .hero-info-value { font-size: 0.95rem; }
+      .hero-scroll { bottom: 16px; }
+
+      /* Sections */
+      #ablauf, #upload, #galerie { padding: 56px 16px; }
+      .section-title { font-size: clamp(1.7rem, 7vw, 2.4rem); }
+      .section-head { margin-bottom: 32px; }
+
+      /* Timeline */
+      .tl-item { gap: 20px; padding-bottom: 32px; }
+      .tl-icon { width: 38px; height: 38px; font-size: 1.05rem; }
+      .tl-item:not(:last-child)::after { left: 18px; top: 40px; }
+      .tl-label { font-size: 1.25rem; }
+      .tl-desc { font-size: 0.84rem; }
+
+      /* Upload */
+      .upload-card { padding: 10px; border-radius: 16px; }
+      .upload-zone { padding: 36px 20px; border-radius: 12px; }
+      .upload-zone-icon { width: 56px; height: 56px; font-size: 1.5rem; margin-bottom: 14px; }
+      .upload-title { font-size: 1.2rem; }
+      .upload-sub { font-size: 0.8rem; margin-bottom: 18px; }
+      .upload-cta { padding: 12px 28px; font-size: 0.72rem; }
+
+      /* Gallery */
+      .gallery-grid { columns: 2; column-gap: 10px; }
+      .g-item { margin-bottom: 10px; border-radius: 10px; }
+
+      /* Footer */
+      .footer-mono { font-size: 2.2rem; }
+      .footer-date { letter-spacing: 3px; }
+
+      /* Lightbox close bigger tap target */
+      #lb-close { font-size: 3rem; top: 16px; right: 20px; padding: 8px; }
+    }
+
+    /* ════════════════════════════════
+       SMALL PHONES ≤ 390px
+    ════════════════════════════════ */
+    @media (max-width: 390px) {
+      .hero-badge { display: none; }
+      .hero-names { font-size: clamp(2.8rem, 16vw, 4rem); }
+      .gallery-grid { columns: 1; }
+    }
+
+    /* ════════════════════════════════
+       TOUCH: always-visible controls
+    ════════════════════════════════ */
+    @media (hover: none) {
+      .g-item-overlay { opacity: 0.4; }
+      .g-item:hover { transform: none; box-shadow: 0 4px 20px rgba(0,0,0,0.35); }
+      .tl-card:hover { transform: none; }
+    }
+
+    /* ════════════════════════════════
+       COUNTDOWN
+    ════════════════════════════════ */
+    .countdown-bar {
+      background: transparent;
+      padding: 48px 24px 52px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 0;
+      mask-image: linear-gradient(to bottom, transparent 0%, black 18%, black 82%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 18%, black 82%, transparent 100%);
+    }
+    .cd-title {
+      width: 100%;
+      text-align: center;
+      font-family: 'Lora', serif;
+      font-style: italic;
+      color: rgba(255,255,255,0.82);
+      font-size: 1rem;
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+    }
+    .cd-item {
+      text-align: center;
+      padding: 0 20px;
+      position: relative;
+    }
+    .cd-item:not(:last-child)::after {
+      content: ':';
+      position: absolute;
+      right: -3px; top: 4px;
+      color: rgba(101,146,214,0.45);
+      font-family: 'Cinzel', serif;
+      font-size: 2rem;
+      line-height: 1;
+    }
+    .cd-num {
+      font-family: 'Cinzel', serif;
+      font-size: 2.6rem;
+      font-weight: 300;
+      color: var(--cornflower-2);
+      line-height: 1;
+      display: block;
+      min-width: 2ch;
+      transition: transform .2s cubic-bezier(0.34,1.5,0.64,1);
+    }
+    .cd-num.tick { transform: scale(1.18); }
+    .cd-label {
+      font-size: 0.56rem;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: rgba(197,217,238,0.45);
+      margin-top: 4px;
+      display: block;
+    }
+    @media (max-width: 480px) {
+      .cd-item { padding: 0 12px; }
+      .cd-num { font-size: 2rem; }
+    }
+
+    /* ════════════════════════════════
+       SCROLL REVEAL
+    ════════════════════════════════ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .65s ease, transform .65s ease;
+    }
+    .reveal.from-left  { transform: translateX(-32px); }
+    .reveal.from-right { transform: translateX(32px); }
+    .reveal.visible    { opacity: 1; transform: none; }
+    .reveal.d1 { transition-delay: 80ms; }
+    .reveal.d2 { transition-delay: 160ms; }
+    .reveal.d3 { transition-delay: 240ms; }
+
+    /* ════════════════════════════════
+       UPLOAD DRAG ANIMATION
+    ════════════════════════════════ */
+    @keyframes uploadFloat {
+      0%,100% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-7px) scale(1.04); }
+    }
+    .upload-zone.drag-over .upload-zone-icon {
+      animation: uploadFloat .75s ease-in-out infinite;
+      box-shadow: 0 12px 36px rgba(101,146,214,0.65);
+    }
+    @keyframes uploadSuccess {
+      0%   { transform: scale(1); }
+      40%  { transform: scale(1.12); }
+      100% { transform: scale(1); }
+    }
+    .upload-zone.success .upload-zone-icon {
+      animation: uploadSuccess .5s ease forwards;
+    }
+
+    /* ════════════════════════════════
+       GALLERY POP-IN
+    ════════════════════════════════ */
+    @keyframes galleryPop {
+      0%   { opacity: 0; transform: scale(0.78) translateY(10px); }
+      65%  { transform: scale(1.04) translateY(-2px); }
+      100% { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    .g-item.popin { animation: galleryPop .48s cubic-bezier(0.34,1.4,0.64,1) forwards; }
+
+    /* ════════════════════════════════
+       ALL PHOTOS OVERLAY
+    ════════════════════════════════ */
+    #allPhotosOverlay {
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      inset: 0;
+      z-index: 600;
+      background: #0d1a2e;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .3s ease;
+    }
+    #allPhotosOverlay.active { opacity: 1; pointer-events: all; }
+    #apHeader {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 28px;
+      border-bottom: 1px solid rgba(101,146,214,0.18);
+      flex-shrink: 0;
+      background: rgba(28,52,87,0.95);
+      backdrop-filter: blur(10px);
+    }
+    #apTitle {
+      font-family: 'Cinzel', serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: white;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+    #apClose {
+      color: rgba(197,217,238,0.75);
+      font-size: 2.2rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      line-height: 1;
+      transition: color .2s, transform .2s;
+      padding: 4px 8px;
+    }
+    #apClose:hover { color: white; transform: rotate(90deg); }
+    #apGrid {
+      flex: 1;
+      overflow-y: auto;
+      padding: 18px;
+      columns: 4;
+      column-gap: 12px;
+    }
+    #apGrid .g-item { margin-bottom: 12px; break-inside: avoid; }
+    @media (max-width: 900px) { #apGrid { columns: 3; } }
+    @media (max-width: 620px) { #apGrid { columns: 2; } }
+    @media (max-width: 380px) { #apGrid { columns: 1; } }
+
+    /* "Alle Bilder" trigger button */
+    #allPhotosBtn {
+      text-align: center;
+      margin-top: 40px;
+    }
+    .all-photos-trigger {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 40px;
+      background: transparent;
+      border: 1.5px solid rgba(122,170,227,0.5);
+      border-radius: 50px;
+      color: var(--cornflower-2);
+      font-family: 'Cinzel', serif;
+      font-size: 0.8rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background .25s, border-color .25s, color .25s, transform .2s;
+    }
+    .all-photos-trigger:hover {
+      background: rgba(101,146,214,0.15);
+      border-color: var(--cornflower-2);
+      color: white;
+      transform: translateY(-2px);
+    }
+    .all-photos-trigger svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2; }
+
+    /* ════════════════════════════════
+       NAV SCROLL STATE
+    ════════════════════════════════ */
+    nav.top-nav { transition: background .3s, box-shadow .3s; }
+    nav.top-nav.scrolled {
+      background: rgba(28,52,87,0.98);
+      box-shadow: 0 2px 24px rgba(0,0,0,0.28);
+    }
+
+    /* ════════════════════════════════
+       TRANSITION BAND (rings + countdown share one gradient)
+    ════════════════════════════════ */
+    #transitionBand {
+      background: linear-gradient(to bottom, #1C3457 0%, #1b3560 55%, #1e3e6a 100%);
+    }
+    #ringsWrap {
+      position: relative;
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: visible;
+      background: transparent;
+      pointer-events: none;
+      z-index: 5;
+    }
+    #ringsSvg {
+      width: 200px;
+      height: 100px;
+      overflow: visible;
+    }
+    @keyframes ringPulse {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0.7; }
+    }
+    #ringsWrap.rings-locked #ringsSvg {
+      animation: ringPulse 2.4s ease-in-out infinite;
+    }
+  </style>
+</head>
+<body>
+
+
+<!-- ═══ HERO ═══ -->
+<section id="hero">
+  <div class="hero-photo"></div>
+  <div class="hero-grad"></div>
+  <div class="hero-vignette"></div>
+  <div class="hero-content">
+    <h1 class="hero-names">Alina &amp; Tobi</h1>
+    <div class="hero-rule">
+      <div class="hero-rule-line"></div>
+      <div class="hero-rule-anchor">⚓</div>
+      <div class="hero-rule-line r"></div>
+    </div>
+    <div class="hero-info">
+      <div class="hero-info-item">
+        <div class="hero-info-label">Datum</div>
+        <div class="hero-info-value">04. September 2026</div>
+      </div>
+      <div class="hero-info-item">
+        <div class="hero-info-label">Ort</div>
+        <div class="hero-info-value">Kirche Wilster</div>
+      </div>
+      <div class="hero-info-item">
+        <div class="hero-info-label">Uhrzeit</div>
+        <div class="hero-info-value">14:00 Uhr</div>
+      </div>
+    </div>
+    <div class="hero-motto">Willkommen im Hafen der Ehe</div>
+  </div>
+  <div class="hero-scroll">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+  </div>
+  <!-- smooth bottom edge on hero photo -->
+  <div style="position:absolute;bottom:0;left:0;right:0;z-index:3;line-height:0;pointer-events:none;">
+    <svg viewBox="0 0 1440 100" preserveAspectRatio="none" style="width:100%;display:block;">
+      <path d="M0,100 C320,40 760,80 1100,30 C1240,10 1360,50 1440,35 L1440,100 Z" fill="#1C3457"/>
+    </svg>
+  </div>
+</section>
+
+<!-- TRANSITION BAND: rings + countdown — single gradient, no internal seams -->
+<div id="transitionBand">
+  <div id="ringsWrap" aria-hidden="true">
+    <svg id="ringsSvg" viewBox="-120 -52 240 104" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="ringGlow" x="-60%" y="-60%" width="220%" height="220%">
+          <feDropShadow dx="0" dy="2" stdDeviation="5" flood-color="#B8965A" flood-opacity="0.55"/>
+        </filter>
+        <filter id="ringGlow2" x="-60%" y="-60%" width="220%" height="220%">
+          <feDropShadow dx="0" dy="2" stdDeviation="5" flood-color="#CEAB7A" flood-opacity="0.55"/>
+        </filter>
+      </defs>
+      <path id="ringLBack"  fill="none" stroke="#B8965A" stroke-width="7" stroke-linecap="round" filter="url(#ringGlow)"/>
+      <path id="ringRBack"  fill="none" stroke="#CEAB7A" stroke-width="7" stroke-linecap="round" filter="url(#ringGlow2)"/>
+      <path id="ringLFront" fill="none" stroke="#B8965A" stroke-width="7" stroke-linecap="round"/>
+      <path id="ringRFront" fill="none" stroke="#CEAB7A" stroke-width="7" stroke-linecap="round"/>
+    </svg>
+  </div>
+
+  <div class="countdown-bar">
+    <div class="cd-title">Noch bis zum großen Tag …</div>
+    <div class="cd-item"><span class="cd-num" id="cd-days">000</span><span class="cd-label">Tage</span></div>
+    <div class="cd-item"><span class="cd-num" id="cd-hours">00</span><span class="cd-label">Stunden</span></div>
+    <div class="cd-item"><span class="cd-num" id="cd-mins">00</span><span class="cd-label">Minuten</span></div>
+    <div class="cd-item"><span class="cd-num" id="cd-secs">00</span><span class="cd-label">Sekunden</span></div>
+  </div>
+</div>
+
+<!-- wave: transition band → ablauf -->
+<svg class="shape" viewBox="0 0 1440 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style="display:block;margin-top:-1px;">
+  <rect width="1440" height="90" fill="#1e3e6a"/>
+  <path d="M0,90 C360,25 900,70 1440,35 L1440,90 Z" fill="#1C3457"/>
+</svg>
+
+<!-- ═══ ABLAUF ═══ -->
+<section id="ablauf">
+  <div class="inner">
+    <div class="section-head reveal">
+      <div class="section-eyebrow">Der große Tag</div>
+      <h2 class="section-title">Ablauf der Feier</h2>
+      <p class="section-lead">Wir freuen uns, jeden Moment dieses besonderen Tages mit euch zu erleben.</p>
+    </div>
+
+    <div class="timeline">
+
+      <div class="tl-item reveal">
+        <div class="tl-icon">🚢</div>
+        <div class="tl-body">
+          <div class="tl-time">13:30 Uhr</div>
+          <div class="tl-label">Empfang der Gäste</div>
+          <div class="tl-desc">Herzliches Willkommen vor der Kirche mit einem kleinen Aperitif und musikalischer Begleitung</div>
+        </div>
+      </div>
+
+      <div class="tl-item reveal">
+        <div class="tl-icon">💒</div>
+        <div class="tl-body">
+          <div class="tl-time">14:00 Uhr</div>
+          <div class="tl-label">Kirchliche Trauung</div>
+          <div class="tl-desc">Die feierliche Zeremonie in der Kirche Wilster – der schönste Moment des Tages</div>
+        </div>
+      </div>
+
+      <div class="tl-item reveal">
+        <div class="tl-icon">🥂</div>
+        <div class="tl-body">
+          <div class="tl-time">15:00 Uhr</div>
+          <div class="tl-label">Sektempfang &amp; Fotos</div>
+          <div class="tl-desc">Anstoßen auf das frisch verheiratete Paar, Gruppen- und Familienfotos vor der Kirche</div>
+        </div>
+      </div>
+
+      <div class="tl-item reveal">
+        <div class="tl-icon">🚌</div>
+        <div class="tl-body">
+          <div class="tl-time">16:00 Uhr</div>
+          <div class="tl-label">Transfer zur Location</div>
+          <div class="tl-desc">Shuttle-Busse bringen euch komfortabel zur Feier-Location am Wasser</div>
+        </div>
+      </div>
+
+      <div class="tl-item reveal">
+        <div class="tl-icon">☕</div>
+        <div class="tl-body">
+          <div class="tl-time">16:30 Uhr</div>
+          <div class="tl-label">Kaffee &amp; Kuchen</div>
+          <div class="tl-desc">Gemütlicher Nachmittag mit selbstgebackenen Torten und hauseigenem Gebäck</div>
+        </div>
+      </div>
+
+      <div class="tl-item reveal">
+        <div class="tl-icon">🍽️</div>
+        <div class="tl-body">
+          <div class="tl-time">18:30 Uhr</div>
+          <div class="tl-label">Festliches Dinner</div>
+          <div class="tl-desc">Mehrgängiges Menü mit regionalen Spezialitäten – Tischplan am Eingang</div>
+        </div>
+      </div>
+
+      <div class="tl-item reveal">
+        <div class="tl-icon">💃</div>
+        <div class="tl-body">
+          <div class="tl-time">20:00 Uhr</div>
+          <div class="tl-label">Eröffnungstanz</div>
+          <div class="tl-desc">Das Paar eröffnet die Tanzfläche – danach ist für alle geöffnet!</div>
+        </div>
+      </div>
+
+      <div class="tl-item reveal">
+        <div class="tl-icon">🌙</div>
+        <div class="tl-body">
+          <div class="tl-time">23:30 Uhr</div>
+          <div class="tl-label">Mitternachtssnack</div>
+          <div class="tl-desc">Kleine Stärkung für alle Nachteulen – und dann weiter feiern bis in den Morgen!</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SHAPE: ablauf → upload -->
+<svg class="shape" viewBox="0 0 1440 110" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style="display:block;margin-top:-1px;">
+  <rect width="1440" height="110" fill="#1e3e6a"/>
+  <path d="M0,0 C240,90 600,30 900,75 C1100,105 1280,40 1440,65 L1440,110 L0,110 Z" fill="#E8F1FA"/>
+</svg>
+
+<!-- ═══ UPLOAD ═══ -->
+<section id="upload">
+  <div class="inner">
+    <div class="section-head reveal">
+      <div class="section-eyebrow">Eure Momente</div>
+      <h2 class="section-title">Fotos teilen</h2>
+      <p class="section-lead">Haltet eure Lieblingsmomente fest und teilt sie mit uns. Gemeinsam entsteht unsere unvergessliche Galerie.</p>
+    </div>
+    <div class="upload-card">
+      <div class="upload-zone" id="uploadZone">
+        <input type="file" id="fileInput" multiple accept="image/*">
+        <div class="upload-zone-icon">📷</div>
+        <div class="upload-title">Fotos hier ablegen</div>
+        <p class="upload-sub">JPEG, PNG, HEIC · beliebig viele auf einmal</p>
+        <div class="upload-cta">Fotos auswählen</div>
+        <div id="uploadPill" style="display:none" class="upload-pill">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          <span id="uploadPillText"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SHAPE: upload → galerie -->
+<svg class="shape" viewBox="0 0 1440 110" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style="display:block;margin-top:-1px;">
+  <rect width="1440" height="110" fill="#E8F1FA"/>
+  <path d="M0,110 C300,25 700,90 1050,45 C1220,20 1350,75 1440,50 L1440,110 Z" fill="#2a4a72"/>
+</svg>
+
+<!-- ═══ GALERIE ═══ -->
+<section id="galerie">
+  <div class="inner">
+    <div class="section-head reveal">
+      <div class="section-eyebrow">Erinnerungen</div>
+      <h2 class="section-title">Unsere Galerie</h2>
+      <p class="section-lead" style="color:var(--mist)">Klickt auf ein Foto für die Vollansicht.</p>
+    </div>
+    <div id="galleryEmpty" class="gallery-empty">
+      <span class="gallery-empty-icon">🖼️</span>
+      <p>Noch keine Fotos geteilt.<br>Seid die Ersten und ladet eure schönsten Momente hoch!</p>
+    </div>
+    <div class="gallery-grid" id="galleryGrid"></div>
+  </div>
+</section>
+
+<!-- Heart clip-path definitions -->
+<svg width="0" height="0" style="position:absolute;overflow:hidden">
+  <defs>
+    <!-- Original halves (seam at center) — used for snapped grid tiles -->
+    <clipPath id="heartL" clipPathUnits="objectBoundingBox">
+      <path d="M0.5,0.82 C0.5,0.82 0.06,0.54 0.06,0.29 C0.06,0.13 0.17,0.04 0.32,0.1 C0.41,0.13 0.5,0.23 0.5,0.23 L0.5,0.82 Z"/>
+    </clipPath>
+    <clipPath id="heartR" clipPathUnits="objectBoundingBox">
+      <path d="M0.5,0.23 C0.5,0.23 0.59,0.13 0.68,0.1 C0.83,0.04 0.94,0.13 0.94,0.29 C0.94,0.54 0.5,0.82 0.5,0.82 L0.5,0.23 Z"/>
+    </clipPath>
+    <clipPath id="heartFull" clipPathUnits="objectBoundingBox">
+      <path d="M0.5,0.82 C0.5,0.82 0.06,0.54 0.06,0.29 C0.06,0.13 0.17,0.04 0.32,0.1 C0.41,0.13 0.5,0.23 0.5,0.23 C0.5,0.23 0.59,0.13 0.68,0.1 C0.83,0.04 0.94,0.13 0.94,0.29 C0.94,0.54 0.5,0.82 0.5,0.82 Z"/>
+    </clipPath>
+    <!-- Edge-seam halves (seam at bounding-box edge) — used for floating drag pieces -->
+    <!-- heartFloatL: left lobe, seam at RIGHT edge (x=1) -->
+    <clipPath id="heartFloatL" clipPathUnits="objectBoundingBox">
+      <path d="M1,0.82 C1,0.82 0.56,0.54 0.56,0.29 C0.56,0.13 0.67,0.04 0.82,0.1 C0.91,0.13 1,0.23 1,0.23 L1,0.82 Z"/>
+    </clipPath>
+    <!-- heartFloatR: right lobe, seam at LEFT edge (x=0) -->
+    <clipPath id="heartFloatR" clipPathUnits="objectBoundingBox">
+      <path d="M0,0.23 C0,0.23 0.09,0.13 0.18,0.1 C0.33,0.04 0.44,0.13 0.44,0.29 C0.44,0.54 0,0.82 0,0.82 L0,0.23 Z"/>
+    </clipPath>
+  </defs>
+</svg>
+
+<!-- ═══ PUZZLE ═══ -->
+<section id="puzzle" style="background:linear-gradient(180deg,#162c4a 0%,#1C3457 100%);padding:80px 24px;">
+  <div class="inner">
+    <div class="section-head reveal">
+      <div class="section-eyebrow" style="color:var(--cornflower-2);">Eine kleine Aufgabe</div>
+      <h2 class="section-title" style="color:white;">Vervollständigt unser Bild</h2>
+      <p class="section-lead" style="color:var(--mist);">Das Herz fehlt noch – zieht es an seinen Platz und vervollständigt unser Bild.</p>
+    </div>
+
+    <div id="puzzleWrap" style="max-width:500px;margin:0 auto;user-select:none;touch-action:none;">
+      <div id="puzzleGrid"></div>
+      <p style="text-align:center;color:rgba(197,217,238,0.45);font-size:0.72rem;letter-spacing:2.5px;text-transform:uppercase;margin:20px 0 0;font-family:'Cinzel',serif;">Die fehlenden Herzstücke</p>
+      <div id="puzzleFloatRow">
+        <div id="pLeft"  class="pf-piece" data-side="left"  title="Linke Hälfte – zieh mich!"></div>
+        <div id="pRight" class="pf-piece" data-side="right" title="Rechte Hälfte – zieh mich!"></div>
+      </div>
+    </div>
+
+    <div id="puzzleSuccess" style="display:none;text-align:center;margin-top:0;">
+      <div id="puzzleFullImg" style="max-width:500px;margin:0 auto;border-radius:16px;overflow:hidden;box-shadow:0 12px 60px rgba(0,0,0,0.6);"></div>
+      <div id="puzzleThanks" style="opacity:0;transition:opacity 1.4s ease;margin-top:36px;padding:0 24px;">
+        <div style="font-family:'Pinyon Script',cursive;font-size:3.5rem;color:var(--cornflower-2);margin-bottom:14px;line-height:1.1;">Danke, dass ihr dabei seid</div>
+        <p style="font-family:'Lora',serif;font-style:italic;font-size:1.1rem;color:var(--mist);line-height:1.9;max-width:460px;margin:0 auto;">
+          Euer Kommen bedeutet uns mehr als Worte sagen können.<br>
+          Mit euch wird dieser Tag für immer unvergesslich. ⚓
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  #puzzleGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3px;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 8px 48px rgba(0,0,0,0.55);
+  }
+  .p-piece {
+    aspect-ratio: 200 / 177;
+    background-image: url('TobiAlina.jpeg');
+    background-size: 400% 300%;
+  }
+  .p-hole {
+    aspect-ratio: 200 / 177;
+    background: rgba(10,20,38,0.9);
+    display: flex; align-items: center; justify-content: center;
+    transition: background .25s;
+    position: relative;
+    overflow: hidden;
+  }
+  .p-hole svg { width: 80%; height: 80%; opacity: 0.55; transition: opacity .25s, transform .25s; }
+  .p-hole.drag-over { background: rgba(28,52,87,0.85); }
+  .p-hole.drag-over svg { opacity: 1; transform: scale(1.08); }
+
+  #puzzleFloatRow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+    margin-top: 10px;
+    overflow: hidden;
+  }
+  .pf-piece {
+    width: 70%;
+    flex-shrink: 0;
+    aspect-ratio: 1;
+    background-image: url('TobiAlina.jpeg');
+    background-size: 400% 300%;
+    cursor: grab;
+    filter: drop-shadow(0 8px 22px rgba(101,146,214,0.55)) drop-shadow(0 2px 8px rgba(0,0,0,0.45));
+    transition: filter .2s;
+  }
+  .pf-piece:active { cursor: grabbing; filter: drop-shadow(0 12px 32px rgba(101,146,214,0.75)); animation: none !important; }
+  #pLeft  { clip-path: url(#heartFloatL); animation: heartFloatL 2.8s ease-in-out infinite; }
+  #pRight { clip-path: url(#heartFloatR); animation: heartFloatR 2.8s ease-in-out infinite; animation-delay: -1.4s; }
+  #pLeft.placed, #pRight.placed { display: none; }
+  @keyframes heartFloatL {
+    0%,100% { transform: translateY(0) rotate(-2deg); }
+    50%      { transform: translateY(-10px) rotate(1deg); }
+  }
+  @keyframes heartFloatR {
+    0%,100% { transform: translateY(0) rotate(2deg); }
+    50%      { transform: translateY(-10px) rotate(-1deg); }
+  }
+  @keyframes heartFloat {
+    0%,100% { transform: translateY(0) scale(1); }
+    50%      { transform: translateY(-10px) scale(1.04); }
+  }
+  .p-piece-heart {
+    position: absolute;
+    inset: 0;
+    background-image: url('TobiAlina.jpeg');
+    background-size: 400% 300%;
+    transition: transform .5s cubic-bezier(0.34,1.5,0.64,1);
+  }
+  #puzzleFullImg img {
+    width: 100%; display: block;
+    animation: puzzleReveal 2.5s ease forwards;
+  }
+  @keyframes puzzleReveal {
+    0%   { filter: blur(20px) brightness(0.35) saturate(0.5); transform: scale(0.9);  opacity: 0.2; }
+    35%  { filter: blur(8px)  brightness(0.65) saturate(0.8); transform: scale(0.97); opacity: 0.65; }
+    100% { filter: blur(0)    brightness(1)    saturate(1);   transform: scale(1);    opacity: 1; }
+  }
+</style>
+
+<script>
+(function() {
+  const COLS = 4, ROWS = 3;
+  // Two missing pieces: left=(1,1) right=(2,1) — adjacent, form a heart together
+  const HOLES = [{ c:1, r:1, side:'left' }, { c:2, r:1, side:'right' }];
+  const grid = document.getElementById('puzzleGrid');
+
+  function bgPos(c, r) { return `${(c/(COLS-1))*100}% ${(r/(ROWS-1))*100}%`; }
+
+  // Both floating pieces share the same center bgPos so together they form one cohesive heart
+  document.getElementById('pLeft').style.backgroundPosition  = '50% 50%';
+  document.getElementById('pRight').style.backgroundPosition = '50% 50%';
+
+  // Build grid
+  const holeEls = {};
+  for (let r = 0; r < ROWS; r++) {
+    for (let c = 0; c < COLS; c++) {
+      const holeInfo = HOLES.find(h => h.c===c && h.r===r);
+      if (holeInfo) {
+        const hole = document.createElement('div');
+        hole.className = 'p-hole';
+        hole.dataset.side = holeInfo.side;
+        const isLeft = holeInfo.side === 'left';
+        // Show only the relevant half of the heart outline
+        // Seam aligned to the shared tile boundary: right edge for left hole, left edge for right hole
+        const halfPath = isLeft
+          ? 'M100,82 C100,82 56,54 56,29 C56,13 67,4 82,10 C91,13 100,23 100,23 L100,82 Z'
+          : 'M0,23 C0,23 9,13 18,10 C33,4 44,13 44,29 C44,54 0,82 0,82 L0,23 Z';
+        hole.innerHTML = `<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="${halfPath}" stroke="var(--cornflower-2)" stroke-width="2.5" stroke-dasharray="5,3" fill="rgba(101,146,214,0.07)"/>
+        </svg>`;
+        grid.appendChild(hole);
+        holeEls[holeInfo.side] = hole;
+      } else {
+        const p = document.createElement('div');
+        p.className = 'p-piece';
+        p.style.backgroundPosition = bgPos(c,r);
+        grid.appendChild(p);
+      }
+    }
+  }
+
+  let placedCount = 0;
+
+  function snapPiece(side) {
+    const floatEl = document.getElementById(side === 'left' ? 'pLeft' : 'pRight');
+    const hole    = holeEls[side];
+    const col     = side === 'left' ? 1 : 2;
+
+    floatEl.classList.add('placed');
+
+    const snap = document.createElement('div');
+    snap.className = 'p-piece-heart filled';
+    snap.style.backgroundPosition = bgPos(col, 1);
+    snap.style.transform = 'scale(0) rotate(' + (side==='left'?'-':'+') + '18deg)';
+    hole.innerHTML = '';
+    hole.style.background = 'transparent';
+    hole.appendChild(snap);
+
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      snap.style.transform = 'scale(1) rotate(0deg)';
+    }));
+
+    placedCount++;
+    if (placedCount === 2) {
+      setTimeout(completeAll, 900);
+    }
+  }
+
+  // ── Unified pointer-event drag (preserves heart shape, no teleport) ──
+  ['left','right'].forEach(side => {
+    const floatEl = document.getElementById(side === 'left' ? 'pLeft' : 'pRight');
+    const clipId  = side === 'left' ? 'heartFloatL' : 'heartFloatR';
+    let clone = null, offX = 0, offY = 0;
+
+    floatEl.addEventListener('pointerdown', e => {
+      if (floatEl.classList.contains('placed')) return;
+      e.preventDefault();
+      floatEl.setPointerCapture(e.pointerId);
+      floatEl.style.opacity = '0';
+      const rect = floatEl.getBoundingClientRect();
+      offX = e.clientX - rect.left;
+      offY = e.clientY - rect.top;
+      const w = rect.width;
+      clone = document.createElement('div');
+      clone.style.cssText = `position:fixed;z-index:9999;pointer-events:none;width:${w}px;height:${w}px;` +
+        `background-image:url('TobiAlina.jpeg');background-size:400% 300%;background-position:${floatEl.style.backgroundPosition};` +
+        `clip-path:url(#${clipId});filter:drop-shadow(0 10px 28px rgba(101,146,214,0.65));opacity:0.88;`;
+      document.body.appendChild(clone);
+      clone.style.left = (e.clientX - offX) + 'px';
+      clone.style.top  = (e.clientY - offY) + 'px';
+    });
+
+    floatEl.addEventListener('pointermove', e => {
+      if (!clone) return;
+      clone.style.left = (e.clientX - offX) + 'px';
+      clone.style.top  = (e.clientY - offY) + 'px';
+      document.querySelectorAll('.p-hole').forEach(h => h.classList.remove('drag-over'));
+      const el = document.elementFromPoint(e.clientX, e.clientY);
+      const target = el?.closest?.('.p-hole') || (el?.classList.contains('p-hole') ? el : null);
+      if (target) target.classList.add('drag-over');
+    });
+
+    floatEl.addEventListener('pointerup', e => {
+      if (!clone) return;
+      clone.remove(); clone = null;
+      floatEl.style.opacity = '1';
+      document.querySelectorAll('.p-hole').forEach(h => h.classList.remove('drag-over'));
+      const el = document.elementFromPoint(e.clientX, e.clientY);
+      const target = el?.closest?.('.p-hole') || (el?.classList.contains('p-hole') ? el : null);
+      if (target && target.dataset.side === side && !floatEl.classList.contains('placed')) snapPiece(side);
+    });
+
+    floatEl.addEventListener('pointercancel', () => {
+      if (clone) { clone.remove(); clone = null; }
+      floatEl.style.opacity = '1';
+      document.querySelectorAll('.p-hole').forEach(h => h.classList.remove('drag-over'));
+    });
+  });
+
+  function completeAll() {
+    const wrap    = document.getElementById('puzzleWrap');
+    const success = document.getElementById('puzzleSuccess');
+    const fullImg = document.getElementById('puzzleFullImg');
+    const thanks  = document.getElementById('puzzleThanks');
+    wrap.style.transition = 'opacity .7s';
+    wrap.style.opacity = '0';
+    setTimeout(() => {
+      wrap.style.display = 'none';
+      success.style.display = 'block';
+      fullImg.innerHTML = '<img src="TobiAlina.jpeg" alt="Alina & Tobi">';
+      setTimeout(() => { thanks.style.opacity = '1'; }, 2300);
+    }, 700);
+  }
+})();
+</script>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-mono">Alina &amp; Tobi</div>
+  <div class="footer-date">04 · 09 · 2026 &nbsp;·&nbsp; Kirche Wilster</div>
+  <div class="footer-slogan">„Willkommen im Hafen der Ehe" ⚓</div>
+</footer>
+
+<!-- ALL PHOTOS OVERLAY -->
+<div id="allPhotosOverlay">
+  <div id="apHeader">
+    <div id="apTitle">Alle Fotos</div>
+    <button id="apClose" onclick="closeAllPhotos()">&times;</button>
+  </div>
+  <div id="apGrid"></div>
+</div>
+
+<!-- LIGHTBOX -->
+<div id="lightbox">
+  <button id="lb-close">&times;</button>
+  <img id="lb-img" src="" alt="">
+</div>
+
+<script>
+  /* ── DOM refs ── */
+  const fileInput    = document.getElementById('fileInput');
+  const uploadZone   = document.getElementById('uploadZone');
+  const uploadPill   = document.getElementById('uploadPill');
+  const pillText     = document.getElementById('uploadPillText');
+  const galleryGrid  = document.getElementById('galleryGrid');
+  const galleryEmpty = document.getElementById('galleryEmpty');
+  const lightbox     = document.getElementById('lightbox');
+  const lbImg        = document.getElementById('lb-img');
+  const lbClose      = document.getElementById('lb-close');
+  const topNav       = document.querySelector('nav.top-nav');
+
+  let images = [];
+
+  const MAX_PREVIEW = 20;
+
+  /* ── Gallery ── */
+  function updatePill() {
+    if (images.length === 0) { uploadPill.style.display = 'none'; return; }
+    uploadPill.style.display = 'inline-flex';
+    pillText.textContent = `${images.length} Foto${images.length !== 1 ? 's' : ''} in der Galerie`;
+  }
+
+  function makeGItem(src) {
+    const el = document.createElement('div');
+    el.className = 'g-item';
+    el.innerHTML = `<img src="${src}" alt="Hochzeitsfoto" loading="lazy"><div class="g-item-overlay"></div>`;
+    el.onclick = () => openLB(src);
+    return el;
+  }
+
+  function renderGallery() {
+    galleryGrid.innerHTML = '';
+    galleryEmpty.style.display = images.length === 0 ? 'block' : 'none';
+    images.slice(0, MAX_PREVIEW).forEach(src => galleryGrid.appendChild(makeGItem(src)));
+    renderAllPhotosBtn();
+  }
+
+  function renderAllPhotosBtn() {
+    let btn = document.getElementById('allPhotosBtn');
+    if (images.length <= MAX_PREVIEW) { if (btn) btn.remove(); return; }
+    if (!btn) {
+      btn = document.createElement('div');
+      btn.id = 'allPhotosBtn';
+      document.querySelector('#galerie .inner').appendChild(btn);
+    }
+    btn.innerHTML = `<button class="all-photos-trigger" onclick="openAllPhotos()">
+      <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+      Alle ${images.length} Fotos ansehen
+    </button>`;
+  }
+
+  function openAllPhotos() {
+    const overlay = document.getElementById('allPhotosOverlay');
+    const grid    = document.getElementById('apGrid');
+    const title   = document.getElementById('apTitle');
+    title.textContent = `${images.length} Foto${images.length !== 1 ? 's' : ''}`;
+    grid.innerHTML = '';
+    images.forEach(src => {
+      const el = makeGItem(src);
+      el.classList.add('popin');
+      grid.appendChild(el);
+    });
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  window.openAllPhotos  = openAllPhotos;
+  window.closeAllPhotos = function() {
+    document.getElementById('allPhotosOverlay').classList.remove('active');
+    document.body.style.overflow = '';
+  };
+
+  /* ── Lightbox ── */
+  function openLB(src) {
+    lbImg.src = src;
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLB() {
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+  lbClose.onclick = closeLB;
+  lightbox.onclick = e => { if (e.target === lightbox) closeLB(); };
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLB(); });
+
+  /* ── File handling ── */
+  function handleFiles(files) {
+    const imgs = [...files].filter(f => f.type.startsWith('image/'));
+    if (!imgs.length) return;
+    let done = 0;
+    const newSrcs = [];
+    imgs.forEach(f => {
+      const r = new FileReader();
+      r.onload = ev => {
+        newSrcs.push(ev.target.result);
+        if (++done === imgs.length) {
+          galleryEmpty.style.display = 'none';
+          newSrcs.forEach((src, idx) => {
+            const prevLen = images.length;
+            images.push(src);
+            if (prevLen < MAX_PREVIEW) {
+              // animate directly into the preview grid
+              setTimeout(() => {
+                galleryEmpty.style.display = 'none';
+                const el = makeGItem(src);
+                el.classList.add('popin');
+                el.addEventListener('animationend', () => el.classList.remove('popin'), { once: true });
+                galleryGrid.appendChild(el);
+              }, idx * 80);
+            }
+          });
+          setTimeout(() => renderAllPhotosBtn(), newSrcs.length * 80 + 50);
+          updatePill();
+          uploadZone.classList.add('success');
+          setTimeout(() => uploadZone.classList.remove('success'), 600);
+          setTimeout(() => document.getElementById('galerie').scrollIntoView({ behavior: 'smooth' }), newSrcs.length * 80 + 200);
+        }
+      };
+      r.readAsDataURL(f);
+    });
+  }
+
+  fileInput.onchange = e => handleFiles(e.target.files);
+  uploadZone.ondragover  = e => { e.preventDefault(); uploadZone.classList.add('drag-over'); };
+  uploadZone.ondragleave = () => uploadZone.classList.remove('drag-over');
+  uploadZone.ondrop = e => {
+    e.preventDefault();
+    uploadZone.classList.remove('drag-over');
+    handleFiles(e.dataTransfer.files);
+  };
+
+  /* ── Countdown ── */
+  const WEDDING = new Date('2026-09-04T14:00:00');
+  function pad(n, w) { return String(n).padStart(w, '0'); }
+  function tick() {
+    const diff = WEDDING - new Date();
+    if (diff <= 0) {
+      document.querySelector('.countdown-bar').innerHTML =
+        '<div class="cd-title" style="font-size:1.2rem;color:var(--cornflower-2);margin:0">🎉 Heute ist der große Tag! 🎉</div>';
+      return;
+    }
+    const d = Math.floor(diff / 86400000);
+    const h = Math.floor((diff % 86400000) / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    const s = Math.floor((diff % 60000) / 1000);
+    const set = (id, val, w) => {
+      const el = document.getElementById(id);
+      if (el && el.textContent !== pad(val, w)) {
+        el.textContent = pad(val, w);
+        el.classList.remove('tick');
+        void el.offsetWidth;
+        el.classList.add('tick');
+        setTimeout(() => el.classList.remove('tick'), 220);
+      }
+    };
+    set('cd-days', d, 3);
+    set('cd-hours', h, 2);
+    set('cd-mins', m, 2);
+    set('cd-secs', s, 2);
+  }
+  tick();
+  setInterval(tick, 1000);
+
+  /* ── Scroll reveal ── */
+  const revealObs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+  /* ── Nav on scroll ── */
+  window.addEventListener('scroll', () => {
+    topNav && topNav.classList.toggle('scrolled', scrollY > 60);
+  }, { passive: true });
+
+  /* ── Animated interlocking rings ── */
+  (function() {
+    const wrap   = document.getElementById('ringsWrap');
+    const lBack  = document.getElementById('ringLBack');
+    const rBack  = document.getElementById('ringRBack');
+    const lFront = document.getElementById('ringLFront');
+    const rFront = document.getElementById('ringRFront');
+    if (!wrap) return;
+
+    const R = 38; // ring radius
+
+    // Build arc path: circle at (cx, 0), radius R, upper or lower half
+    function arcPath(cx, upper) {
+      // upper: from 180° to 0° (top arc); lower: from 0° to 180° (bottom arc)
+      // SVG arc: M start A rx ry rot large-arc sweep end
+      const x1 = cx - R, x2 = cx + R;
+      if (upper) {
+        // top semicircle: left point → right point going over the top (counterclockwise = sweep=0)
+        return `M ${x1},0 A ${R},${R} 0 0 1 ${x2},0`;
+      } else {
+        // bottom semicircle: right point → left point going under (sweep=1)
+        return `M ${x2},0 A ${R},${R} 0 0 1 ${x1},0`;
+      }
+    }
+
+    let locked = false;
+    let rafId  = null;
+
+    function updateRings() {
+      const hero    = document.getElementById('hero');
+      const scrollY = window.scrollY;
+      const heroH   = hero ? hero.offsetHeight : window.innerHeight;
+      // t goes 0→1 as scrollY goes from heroH*0.3 to heroH*0.85
+      const t = Math.max(0, Math.min(1, (scrollY - heroH * 0.3) / (heroH * 0.55)));
+
+      // Left ring cx: -100 → -22 (overlaps right ring by ~16px when both at ±22)
+      const lx = -100 + t * 78;
+      // Right ring cx: 100 → 22
+      const rx =  100 - t * 78;
+
+      // Interlocking z-order:
+      // Left ring back (lower half) goes behind right ring front
+      // Right ring back (lower half) goes behind left ring front
+      lBack.setAttribute('d',  arcPath(lx, false));
+      rBack.setAttribute('d',  arcPath(rx, false));
+      lFront.setAttribute('d', arcPath(lx, true));
+      rFront.setAttribute('d', arcPath(rx, true));
+
+      if (t >= 1 && !locked) {
+        locked = true;
+        wrap.classList.add('rings-locked');
+      } else if (t < 1 && locked) {
+        locked = false;
+        wrap.classList.remove('rings-locked');
+      }
+    }
+
+    window.addEventListener('scroll', () => {
+      if (rafId) cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(updateRings);
+    }, { passive: true });
+
+    updateRings();
+  })();
+</script>
+</body>
+</html>

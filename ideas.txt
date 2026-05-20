@@ -1,0 +1,74 @@
+Alina & Tobi — Ideen für die Hochzeitswebseite
+================================================
+Stand: Mai 2026
+
+Folgende Ideen könnten die Seite noch persönlicher und interaktiver machen:
+
+
+1. GÄSTEBUCH / WÜNSCHE
+   Besucher können einen digitalen Hochzeitswunsch hinterlassen (Name + Text).
+   Die Wünsche erscheinen in einer schönen Card-Galerie unterhalb des Formulars.
+   Lokal gespeichert (localStorage) oder via kleinem Backend/Firebase.
+   Nautisches Extra: jede Wunsch-Karte sieht aus wie eine Flaschenpost-Nachricht
+   mit Pergament-Textur und Siegelwachs-Icon.
+
+
+2. ERSTLIED / MUSIKSPIELER
+   Ein kleiner eingebetteter Audioplayer für das erste Tanzlied.
+   Erscheint als elegante Floating-Bar am unteren Rand – mit Play/Pause,
+   Fortschrittsbalken und Albumcover. Startet stumm, bis der User es aktiviert.
+   Schöner Effekt: beim Abspielen tanzen die Namen "Alina & Tobi" sanft im Takt.
+
+
+3. RSVP-FORMULAR
+   Einfaches Formular: Name, Personenzahl, Menüwunsch (Fisch / Fleisch / Vegi),
+   Nachricht an das Brautpaar. Wird per mailto oder Formspree abgeschickt.
+   Countdown zeigt "Noch X Tage bis Anmeldeschluss" an.
+   Nautisches Extra: Submit-Button beschriftet mit "Jetzt an Bord kommen ⚓"
+
+
+4. "WIE WIR UNS KENNENGELERNT HABEN" – STORY-TIMELINE
+   Interaktive horizontale Scroll-Timeline mit Meilensteinen der Beziehung
+   (erstes Treffen, erster Urlaub, Verlobung, …) inkl. Fotos und kurzen Texten.
+   Jeder Meilenstein ist eine kleine "Postkarte" mit Datum und Ort.
+   Nautisches Extra: Eine Linie wie eine Schiffsroute auf einer alten Seekarte.
+
+
+5. KONFETTI-REGEN BEI PUZZLE-ABSCHLUSS
+   Wenn beide Herzteile eingesetzt sind und das Bild erscheint,
+   fliegen goldene Konfetti-Partikel und kleine Herzen über den Bildschirm.
+   Umsetzbar mit einem leichtgewichtigen Canvas-Konfetti-Skript (z.B. canvas-confetti).
+   Wäre der perfekte krönende Abschluss des Puzzle-Moments.
+
+
+6. QR-CODE ZUM TEILEN
+   Ein generierter QR-Code (mit qrcode.js, clientseitig) der auf die Seiten-URL verweist.
+   Gäste können ihn abscannen und die Seite direkt auf ihrem Handy öffnen.
+   Kann in der Fußzeile oder als Extra-Button erscheinen: "Seite teilen".
+   Für die Einladungskarte könnte man den QR-Code auch ausdrucken.
+
+
+7. WETTER-WIDGET FÜR DEN HOCHZEITSTAG
+   Näher am 04.09.2026: Ein Widget das die Wettervorhersage für Wilster an dem Tag zeigt.
+   Könnte über die Open-Meteo API (kostenlos, kein Key nötig) abgerufen werden.
+   Charmante Nachricht darunter: "Wir heiraten bei jedem Wetter!" 🌤️
+
+
+8. SITZPLAN-TOOL
+   Interaktive Tischübersicht (SVG oder CSS-Grid) wo Gäste ihren Namen suchen können
+   und dann ihren Tisch hervorgehoben sehen. Einfachste Variante: Suchfeld filtert
+   eine Gästeliste und zeigt Tischnummer + Tischnamen an.
+   Nautisches Extra: Tische heißen nach Schiffen ("MS Alina", "SS Tobi", "Yacht der Freunde" …)
+
+
+9. FOTOBOX-MODUS
+   Ein spezieller Vollbild-Modus (z.B. für ein Tablet auf dem Tisch) bei dem Gäste
+   direkt ein Foto mit der Gerätekamera machen können (getUserMedia API).
+   Das Foto wird sofort in der Galerie gespeichert und mit einem nautischen Rahmen versehen.
+   Zugang per verstecktem Link oder PIN.
+
+
+10. SPIRENDE GOLDENE RINGE BEIM SCROLLEN
+    Zwei animierte Eheringe (SVG) die beim Scrollen zur Seite zusammengliden
+    und sich an einem bestimmten Punkt "verhaken" – als Willkommen im Countdown-Bereich.
+    Subtil, elegant, aber unvergesslich.
