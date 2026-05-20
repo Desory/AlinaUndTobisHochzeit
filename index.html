@@ -877,10 +877,158 @@
     #ringsWrap.rings-locked #ringsSvg {
       animation: ringPulse 2.4s ease-in-out infinite;
     }
+
+    /* ════════════════════════════════
+       PASSWORD GATE
+    ════════════════════════════════ */
+    @keyframes pwGradient {
+      0%, 100% { background-position: 0% 50%; }
+      50%       { background-position: 100% 50%; }
+    }
+    @keyframes pwAnchorBob {
+      0%, 100% { transform: translateY(0); opacity: .7; }
+      50%       { transform: translateY(6px); opacity: 1; }
+    }
+    @keyframes pwBoxIn {
+      from { opacity: 0; transform: translateY(28px) scale(0.96); }
+      to   { opacity: 1; transform: none; }
+    }
+    @keyframes pwShake {
+      0%, 100% { transform: none; }
+      20%  { transform: translateX(-9px); }
+      40%  { transform: translateX(9px); }
+      60%  { transform: translateX(-5px); }
+      80%  { transform: translateX(5px); }
+    }
+    #pw-gate {
+      position: fixed; inset: 0; z-index: 99999;
+      background: linear-gradient(135deg,
+        #1B3A5C 0%, #0F2A45 25%, #0a1a2e 55%, #152438 80%, #1B3A5C 100%
+      );
+      background-size: 300% 300%;
+      animation: pwGradient 16s ease infinite;
+      display: flex; align-items: center; justify-content: center;
+      padding: 24px;
+      transition: opacity 0.9s cubic-bezier(0.4,0,0.2,1),
+                  transform 0.9s cubic-bezier(0.4,0,0.2,1),
+                  filter 0.9s ease;
+    }
+    #pw-gate.unlocking {
+      opacity: 0;
+      transform: scale(1.08);
+      filter: blur(16px);
+      pointer-events: none;
+    }
+    .pw-box {
+      background: rgba(255,255,255,0.055);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(184,150,90,0.25);
+      border-radius: 22px;
+      padding: 52px 40px 44px;
+      width: 100%; max-width: 360px;
+      text-align: center;
+      box-shadow: 0 28px 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.04);
+      animation: pwBoxIn 0.95s cubic-bezier(0.34,1.1,0.64,1) forwards;
+    }
+    .pw-anchor-icon {
+      font-size: 1.7rem;
+      display: block;
+      margin-bottom: 14px;
+      filter: drop-shadow(0 2px 12px rgba(184,150,90,0.55));
+      animation: pwAnchorBob 3.2s ease-in-out infinite;
+    }
+    .pw-monogram {
+      font-family: 'Pinyon Script', cursive;
+      font-size: clamp(1.6rem, 7vw, 2.8rem);
+      white-space: nowrap;
+      text-align: center;
+      color: var(--gold-light);
+      line-height: 1.15;
+      margin-bottom: 6px;
+      filter: drop-shadow(0 2px 18px rgba(184,150,90,0.4));
+    }
+    .pw-date {
+      font-family: 'Cinzel', serif;
+      font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase;
+      color: rgba(255,255,255,0.38); margin-bottom: 36px;
+    }
+    .pw-divider {
+      width: 48px; height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold), transparent);
+      margin: 0 auto 32px; opacity: 0.6;
+    }
+    .pw-label {
+      display: block; font-family: 'Cinzel', serif;
+      font-size: 9px; letter-spacing: 0.25em; text-transform: uppercase;
+      color: rgba(255,255,255,0.38); margin-bottom: 12px;
+    }
+    .pw-input {
+      width: 100%; box-sizing: border-box;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.13);
+      border-radius: 10px; padding: 14px 18px;
+      color: white; font-size: 22px;
+      font-family: 'Lora', serif;
+      text-align: center; letter-spacing: 0.25em;
+      outline: none; -webkit-appearance: none;
+      transition: border-color 0.22s, box-shadow 0.22s;
+    }
+    .pw-input:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(184,150,90,0.18);
+    }
+    .pw-input::placeholder {
+      color: rgba(255,255,255,0.18);
+      font-size: 16px; letter-spacing: 0.1em;
+    }
+    .pw-input.shake {
+      animation: pwShake 0.42s cubic-bezier(0.36,0.07,0.19,0.97);
+    }
+    .pw-btn {
+      margin-top: 20px; width: 100%; border: none;
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+      color: var(--navy);
+      border-radius: 10px; padding: 15px 20px;
+      font-family: 'Cinzel', serif; font-size: 10.5px;
+      font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase;
+      cursor: pointer;
+      transition: filter 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 6px 22px rgba(184,150,90,0.35);
+    }
+    .pw-btn:hover {
+      filter: brightness(1.08);
+      box-shadow: 0 8px 30px rgba(184,150,90,0.5);
+    }
+    .pw-btn:active { transform: scale(0.97); }
+    .pw-error {
+      margin-top: 14px; font-family: 'Lora', serif;
+      font-style: italic; font-size: 12px;
+      color: #ff8a80; opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .pw-error.show { opacity: 1; }
+
+    @media (max-width: 420px) {
+      .pw-box { padding: 40px 24px 36px; }
+    }
   </style>
 </head>
 <body>
 
+<div id="pw-gate">
+  <div class="pw-box">
+    <span class="pw-anchor-icon">⚓</span>
+    <div class="pw-monogram">Alina &amp; Tobi</div>
+    <div class="pw-date">04 · 09 · 2026</div>
+    <div class="pw-divider"></div>
+    <label class="pw-label">Passwort</label>
+    <input type="password" class="pw-input" id="pw-input"
+           placeholder="••••••" autocomplete="current-password">
+    <button class="pw-btn" id="pw-btn">UNLOCK</button>
+    <div class="pw-error" id="pw-error"></div>
+  </div>
+</div>
 
 <!-- ═══ HERO ═══ -->
 <section id="hero">
@@ -1043,7 +1191,7 @@
 </section>
 
 <!-- SHAPE: ablauf → upload -->
-<svg class="shape" viewBox="0 0 1440 110" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style="display:block;margin-top:-1px;">
+<svg class="shape" viewBox="0 0 1440 110" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style="display:block;margin-top:-2px;background:#1e3e6a;">
   <rect width="1440" height="110" fill="#1e3e6a"/>
   <path d="M0,0 C240,90 600,30 900,75 C1100,105 1280,40 1440,65 L1440,110 L0,110 Z" fill="#E8F1FA"/>
 </svg>
@@ -1073,7 +1221,7 @@
 </section>
 
 <!-- SHAPE: upload → galerie -->
-<svg class="shape" viewBox="0 0 1440 110" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style="display:block;margin-top:-1px;">
+<svg class="shape" viewBox="0 0 1440 110" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style="display:block;margin-top:-2px;background:#E8F1FA;">
   <rect width="1440" height="110" fill="#E8F1FA"/>
   <path d="M0,110 C300,25 700,90 1050,45 C1220,20 1350,75 1440,50 L1440,110 Z" fill="#2a4a72"/>
 </svg>
@@ -1628,6 +1776,41 @@
 
     updateRings();
   })();
+</script>
+
+<script>
+(function () {
+  var gate  = document.getElementById('pw-gate');
+  var input = document.getElementById('pw-input');
+  var btn   = document.getElementById('pw-btn');
+  var error = document.getElementById('pw-error');
+
+  if (sessionStorage.getItem('unlocked') === '1') {
+    gate.style.display = 'none';
+    return;
+  }
+
+  function attempt() {
+    if (input.value.toLowerCase() === 'wilster') {
+      sessionStorage.setItem('unlocked', '1');
+      gate.classList.add('unlocking');
+      setTimeout(function () { gate.style.display = 'none'; }, 900);
+    } else {
+      error.textContent = 'Falsches Passwort – bitte erneut versuchen.';
+      error.classList.add('show');
+      input.classList.remove('shake');
+      void input.offsetWidth;
+      input.classList.add('shake');
+      input.value = '';
+      input.focus();
+    }
+  }
+
+  btn.addEventListener('click', attempt);
+  input.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') attempt();
+  });
+})();
 </script>
 </body>
 </html>
